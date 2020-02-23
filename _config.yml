@@ -9,7 +9,7 @@ baseurl: '/COPwebsite'
 email: 'cop26collective@gmail.com'
 # mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 
-intgov_spreadsheet_key: /d/e/2PACX-1vRJKHJ3k4dl3DxYOrf4dsg72DMaPEmRp-m-keuBS9Q-GPCHsNen2FRnhx2eg2gVNA
+intgov_spreadsheet_key: 2PACX-1vRJKHJ3k4dl3DxYOrf4dsg72DMaPEmRp-m-keuBS9Q-GPCHsNen2FRnhx2eg2gVNA
 
 github_user: GlasgowCOP
 github_repo: COPwebsite
