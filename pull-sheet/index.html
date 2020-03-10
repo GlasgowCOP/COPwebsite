@@ -92,12 +92,11 @@ title: Update Spreadsheet
 
               $.each(tree, function(treeKey, treeValue) {
 
-                $writepath = '_data/' + $resource + '.yaml';
+                $writepath = '_data/' + $resource + '.yml';
                 $path = treeValue['path'];
                 $sha = treeValue['sha'];
 
-                console.log($path + ' == ' + $writepath);
-                console.log($path);
+                //console.log($path + ' == ' + $writepath);
 
                 if($path==$writepath)
                   {
