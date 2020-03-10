@@ -11,10 +11,23 @@ permalink: "/organisation-list.html"
 {% assign religious = religious | sort:"Name" %}
 
 <!-- Document -->
+<div id="menu">
+  <div class="panel list-group">
+    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">Religious <span class="label label-info"></span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
+      {% for arts in religious %}
+        <a href={{ arts.Website }} class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span>{{ arts.Name}}</a>
+         <div class="list-group-item small">
+           <span class="fas fa-pen fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="description"></span>
+            <span class="text-muted"> {{ arts.Description}} </span>
+           <br>
+           <span class="	fab fa-facebook-f fa-fw text-muted" data-toggle="tooltip" title="" data-original-title={{ arts.Facebook}}></span>
+           <span class="text-muted small">{{ arts.Name}}</span>
+            <br>
+           <span class="fab fa-twitter fa-fw text-muted" data-toggle="tooltip" data-original-title="" title={{ arts.Twitter}}></span>
+           <span class="text-muted small text-truncate">{{ arts.Twitter}}</span>
+          </div>
+    </div>
+  </div>
+    
 
-{% for arts in religious %}
-
-<<ul>
-  <<li><<strong>{{ arts.Name}}</strong> ({{ arts.Website }}, {{ arts.Description}}, {{ arts.Facebook}}, {{ arts.Twitter}})</li>
-</ul>
 {% endfor %}
