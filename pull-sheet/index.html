@@ -44,7 +44,6 @@ title: Update Spreadsheet
     $(document).ready( function() {
       Tabletop.init( { key: $key,
                        callback: showInfo,
-                       wanted: [ $resource ],
                        debug: true } )
     })
 
@@ -61,6 +60,8 @@ title: Update Spreadsheet
       });
 
       $product = tabletop.sheets($resource).all();
+        
+      console.log($product);
 
       $count = 0;
       $total_count = $product.length;
