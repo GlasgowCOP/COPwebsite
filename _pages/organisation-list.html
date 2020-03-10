@@ -7,12 +7,7 @@ permalink: "/organisation-list.html"
 <h2> Organisation List</h2>
 
 <!-- International Organisations-->
-{% assign orgs = site.data %}
-
-{% for organs in orgs %}
- {{organs}}
-  {{organs.name}}
-{% endfor %}
+{% assign organisations = site.data %}
 
 {% assign religious = site.data.religious %}
 {% assign religious = religious | sort:"Name" %}
@@ -20,21 +15,22 @@ permalink: "/organisation-list.html"
 <!-- Document -->
 <div id="menu">
   <div class="panel list-group">
-    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">Religious <span class="label label-info"></span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
-      {% for arts in religious %}
-        <a href={{ arts.Website }} class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span>{{ arts.Name}}</a>
+   {% for orgs in organisations %}
+    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">{{orgs.name}} <span class="label label-info"></span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
+      {% for dat in {{orgs}} %}
+        <a href={{ dat.Website }} class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span>{{ dat.Name}}</a>
          <div class="list-group-item small">
            <span class="fas fa-pen fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="description"></span>
-            <span class="text-muted"> {{ arts.Description}} </span>
+            <span class="text-muted"> {{ dat.Description}} </span>
            <br>
-           <span class="	fab fa-facebook-f fa-fw text-muted" data-toggle="tooltip" title="" data-original-title={{ arts.Facebook}}></span>
-           <span class="text-muted small">{{ arts.Name}}</span>
+           <span class="	fab fa-facebook-f fa-fw text-muted" data-toggle="tooltip" title="" data-original-title={{ dat.Facebook}}></span>
+           <span class="text-muted small">{{ dat.Name}}</span>
             <br>
-           <span class="fab fa-twitter fa-fw text-muted" data-toggle="tooltip" data-original-title="" title={{ arts.Twitter}}></span>
-           <span class="text-muted small text-truncate">{{ arts.Twitter}}</span>
+           <span class="fab fa-twitter fa-fw text-muted" data-toggle="tooltip" data-original-title="" title={{ dat.Twitter}}></span>
+           <span class="text-muted small text-truncate">{{ dat.Twitter}}</span>
           </div>
     </div>
   </div>
     
-
+{% endfor %}
 {% endfor %}
