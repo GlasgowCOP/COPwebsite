@@ -7,6 +7,12 @@ permalink: "/organisation-list.html"
 <h2> Organisation List</h2>
 
 <!-- International Organisations-->
+{% assign orgs = site.data %}
+
+{% for organs in orgs %}
+<span> {{organs}} </span>
+{% endfor %}
+
 {% assign religious = site.data.religious %}
 {% assign religious = religious | sort:"Name" %}
 
