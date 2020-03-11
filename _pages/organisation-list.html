@@ -7,7 +7,7 @@ permalink: "/organisation-list.html"
 <h2> Organisation List</h2>
 
 <!-- International Organisations-->
-{% assign organisations = [site.data.religious,site.data.arts] %}
+{% assign organisations = [[site.data.religious],[site.data.arts]] %}
 
 {% for orgs in [site.data.religious,site.data.union] %}
 {{orgs.Name}}
