@@ -7,36 +7,30 @@ permalink: "/organisation-list.html"
 <h2> Organisation List</h2>
 
 <!-- International Organisations-->
-{% assign organisations = [site.data.religious] %}
 
-{% for orgs in site.data.items() %}
-{{orgs.key}}
-<br>
-{{orgs}}
-{% endfor %}
-
-{% assign religious = site.data.religious %}
-{% assign religious = religious | sort:"Name" %}
 
 <!-- Document -->
 <div id="menu">
   <div class="panel list-group">
-   {% for orgs in organisations %}
-    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">{{orgs.name}} <span class="label label-info"></span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
-      {% for dat in orgs %}
-        <a href={{ dat.Website }} class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span>{{ dat.Name}}</a>
+    <!-- Loop over each organisation type file -->
+    {% for orgtypes in site.data %}
+    {% assign organisations = orgtypes[1] %}
+    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">{{orgtypes[0]}} <span class="label label-info"></span><span class="glyphicon glyphicon-envelope pull-right"></span></a>
+    <!-- Loop over organisations -->
+      {% for org in organisations %}
+        <a href={{ org.Website }} class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span>{{ org.Name}}</a>
          <div class="list-group-item small">
            <span class="fas fa-pen fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="description"></span>
-            <span class="text-muted"> {{ dat.Description}} </span>
+            <span class="text-muted"> {{ org.Description}} </span>
            <br>
-           <span class="	fab fa-facebook-f fa-fw text-muted" data-toggle="tooltip" title="" data-original-title={{ dat.Facebook}}></span>
-           <span class="text-muted small">{{ dat.Name}}</span>
+           <span class="fab fa-facebook-f fa-fw text-muted" data-toggle="tooltip" title="" data-original-title={{ org.Facebook}}></span>
+           <span class="text-muted small">{{ org.Name}}</span>
             <br>
-           <span class="fab fa-twitter fa-fw text-muted" data-toggle="tooltip" data-original-title="" title={{ dat.Twitter}}></span>
-           <span class="text-muted small text-truncate">{{ dat.Twitter}}</span>
+           <span class="fab fa-twitter fa-fw text-muted" data-toggle="tooltip" data-original-title="" title={{ org.Twitter}}></span>
+           <span class="text-muted small text-truncate">{{ org.Twitter}}</span>
           </div>
-    </div>
-  </div>
     
 {% endfor %}
 {% endfor %}
+  </div>
+</div>
