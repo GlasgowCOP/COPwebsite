@@ -86,18 +86,8 @@ title: Update Spreadsheet
               //console.log($count + ' == ' + $total_count);
               if($count==$total_count)
               {
-		  // this is ugly right now, testing first
-		  $myJSONString = JSON.stringify($products);
-		  $myEscapedJSONString = $myJSONString.replace(/\\n/g, "\\n")
-                                      .replace(/\\'/g, "\\'")
-                                      .replace(/\\"/g, '\\"')
-                                      .replace(/\\&/g, "\\&")
-                                      .replace(/\\r/g, "\\r")
-                                      .replace(/\\t/g, "\\t")
-                                      .replace(/\\b/g, "\\b")
-                      .replace(/\\f/g, "\\f");
-		  $products_escaped = JSON.parse($myEscapedJSONString);
-		  $yaml_dump = jsyaml.dump($products_escaped);
+
+		  $yaml_dump = jsyaml.dump($products);
 
 		  
 		  
@@ -121,10 +111,15 @@ title: Update Spreadsheet
 			  
 			  if($path==$writepath)
 			  {
+			      try{
 			      repo.writemanual('gh-pages',$writepath,
 					       $yaml_dump, 'Save', $sha, function(err) {
 						   console.log(err);});
-			      console.log("writing " + $writepath);
+				  console.log("writing " + $writepath);
+			      }
+			      catch(err){
+				  console.log(err)
+			      }
 			      //alert("saved " + $writepath);
 			  }
                       });
