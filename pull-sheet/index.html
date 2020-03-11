@@ -86,7 +86,20 @@ title: Update Spreadsheet
               //console.log($count + ' == ' + $total_count);
               if($count==$total_count)
               {
-		  $yaml_dump = jsyaml.dump($products);
+		  // this is ugly right now, testing first
+		  $myJSONString = JSON.stringify($products);
+		  $myEscapedJSONString = myJSONString.replace(/\\n/g, "\\n")
+                                      .replace(/\\'/g, "\\'")
+                                      .replace(/\\"/g, '\\"')
+                                      .replace(/\\&/g, "\\&")
+                                      .replace(/\\r/g, "\\r")
+                                      .replace(/\\t/g, "\\t")
+                                      .replace(/\\b/g, "\\b")
+                      .replace(/\\f/g, "\\f");
+		  $products_escaped = JSON.parse(myEscapedJSONString);
+		  $yaml_dump = jsyaml.dump($products_escaped);
+
+		  
 		  
 		  document.getElementById('source').value = $yaml_dump;
 		  
