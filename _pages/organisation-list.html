@@ -10,7 +10,9 @@ permalink: "/organisation-list.html"
 {% assign organisations = [site.data.religious,site.data.arts] %}
 
 {% for orgs in organisations %}
-{{orgs}}
+{% for test in {{orgs}} %}
+{{test.Name}}
+{% endfor %}
 {% endfor %}
 
 {% assign religious = site.data.religious %}
