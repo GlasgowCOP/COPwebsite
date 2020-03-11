@@ -9,8 +9,11 @@ permalink: "/organisation-list.html"
 <!-- International Organisations-->
 {% assign organisations = [site.data.religious,site.data.arts] %}
 
-{% for orgs in organisations %}
+{% for orgs in [site.data.religious,site.data.arts,site.data.ngo] %}
 {{orgs.Name}}
+<br>
+{{orgs}}
+<br>
 {% for test in orgs %}
 {{test.Name}}
 {% endfor %}
