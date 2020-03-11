@@ -9,10 +9,12 @@ permalink: "/organisation-list.html"
 <!-- International Organisations-->
 {% assign organisations = site.data %}
 
-{% for type,orgs in organisations.items() %}
-<span>{type}</span>
+{% for orgs in organisations %}
+{% for name,val in orgs.items()%}
+<span>{{name}}</span>
 <br>
 <span> {{orgs}}</span>
+{% endfor %}
 {% endfor %}
 
 {% assign religious = site.data.religious %}
