@@ -62,7 +62,11 @@ title: Update Spreadsheet
       });
 
       $product = tabletop.sheets($resource).all();
-        
+
+	if ($resource != null){
+	    $sheetnames = new Array($resource);
+	}
+	
       $count = 0;
       $total_count = $product.length;
 	$.each($sheetnames, function(i,sheet){
@@ -111,15 +115,10 @@ title: Update Spreadsheet
 			  
 			  if($path==$writepath)
 			  {
-			      try{
 			      repo.writemanual('gh-pages',$writepath,
 					       $yaml_dump, 'Save', $sha, function(err) {
 						   console.log(err);});
 				  console.log("writing " + $writepath);
-			      }
-			      catch(err){
-				  console.log(err)
-			      }
 			      //alert("saved " + $writepath);
 			  }
                       });
