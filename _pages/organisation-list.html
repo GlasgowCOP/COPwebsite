@@ -17,7 +17,7 @@ permalink: "/organisation-list.html"
   <div class="panel list-group">
    {% for orgs in organisations %}
     <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">{{orgs.name}} <span class="label label-info"></span> <span class="glyphicon glyphicon-envelope pull-right"></span></a>
-      {% for dat in {{orgs}} %}
+      {% for dat in orgs %}
         <a href={{ dat.Website }} class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span>{{ dat.Name}}</a>
          <div class="list-group-item small">
            <span class="fas fa-pen fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="description"></span>
