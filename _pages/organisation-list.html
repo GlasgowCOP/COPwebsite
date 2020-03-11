@@ -10,8 +10,8 @@ permalink: "/organisation-list.html"
 {% assign organisations = site.data %}
 
 {% for orgs in organisations %}
-{% for name,val in orgs.items()%}
-<span>{{name}}</span>
+{% for names in orgs%}
+<span>{{names}}</span>
 <br>
 <span> {{orgs}}</span>
 {% endfor %}
