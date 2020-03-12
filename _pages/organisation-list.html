@@ -14,7 +14,10 @@ permalink: "/organisation-list.html"
  <div class="panel list-group">
     <!-- Loop over each organisation type file -->
     <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">Organisations <span class="label label-info"></span><span class="glyphicon glyphicon-envelope pull-right"></span></a>
-
+    {% for org in site.data.ORGANISATIONS%}
+    <p> {{org.Name}}</p>
+    <br>
+    {% endfor %}
   </div>
 </div>
 
