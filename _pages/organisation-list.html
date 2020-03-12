@@ -15,9 +15,19 @@ permalink: "/organisation-list.html"
     <!-- Loop over each organisation type file -->
     <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">Organisations <span class="label label-info"></span><span class="glyphicon glyphicon-envelope pull-right"></span></a>
     {% for org in site.data.ORGANISATIONS%}
-    <p> {{org["ORGANISATION NAME"]}}</p>
-    <br>
-    {% endfor %}
+    <a href={{ org.Website }} class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span>{{org["ORGANISATION NAME"]}}</a>  
+    <div class="list-group-item small">
+      <span class="fas fa-pen fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="description"></span> 
+      <span class="text-muted"> {{ org["AIMS/ABOUT"]}} </span> 
+      <br>
+      <span class="fab fa-facebook-f fa-fw text-muted" data-toggle="tooltip" title="" data-original-title={{ org["FACEBOOK"]}}></span>
+      <span class="text-muted small">{{ org.["ORGANISATION NAME"]}}</span>
+      <br>
+      <span class="fab fa-twitter fa-fw text-muted" data-toggle="tooltip" data-original-title="" title={{ org["Twitter"]}}></span> 
+      <span class="text-muted small text-truncate">{{ org["Twitter"] }}</span> 
+    </div>  
+      
+      {% endfor %}
   </div>
 </div>
 
