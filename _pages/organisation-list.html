@@ -15,7 +15,7 @@ permalink: "/organisation-list.html"
     <!-- Loop over each organisation type file -->
     <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">Organisations <span class="label label-info"></span><span class="glyphicon glyphicon-envelope pull-right"></span></a>
     {% for org in site.data.ORGANISATIONS%}
-    <a href={{ org["WEBSITE"] }} class="list-group-item
+    <a href='{{ org["WESBITE"] }}' class="list-group-item
     small"><span class="glyphicon
 			glyphicon-chevron-right"></span>{{org["ORGANISATION NAME"]}}</a>
     <!--
