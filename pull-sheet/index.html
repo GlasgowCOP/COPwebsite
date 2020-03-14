@@ -54,7 +54,7 @@ title: Update Spreadsheet
 
       $("#table_info").text("We found the tables " + tabletop.model_names.join(", "));
 
-	$sheetnames = new Array();
+      $sheetnames = new Array();
       $.each( tabletop.sheets(), function(i, sheet) {
         $("#table_info").append("<p>" + sheet.name + " has " +
 				sheet.column_names.join(", ") + "</p>");
@@ -71,7 +71,8 @@ title: Update Spreadsheet
       //$total_count = $product.length;
 	$.each($sheetnames, function(i,sheet){
 
-	  $writepath = '_data/' + sheet + '.yml';
+	  $writepath = '_data/' + sheet + '.yaml';
+	  console.log($writepath);
           $products = new Array();
           $product = tabletop.sheets(sheet).all();
           $total_count = $product.length;
@@ -105,7 +106,6 @@ title: Update Spreadsheet
 		      
 		      $.each(tree, function(treeKey, treeValue) {
 			  
-			  $writepath = '_data/' + sheet + '.yml';
 			  $path = treeValue['path'];
 			  $sha = treeValue['sha'];
 			  
@@ -115,7 +115,7 @@ title: Update Spreadsheet
 			  {
 			      repo.writemanual('gh-pages',$writepath,
 					       $yaml_dump, 'Save', $sha, function(err) {});
-				  console.log("writing " + $writepath);
+			      console.log("writing " + $writepath);
 			      //alert("saved " + $writepath);
 			  }
                       });
