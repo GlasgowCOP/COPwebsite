@@ -5340,15 +5340,6 @@
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
-- NAME: Legal
-  WEBSITE: ''
-  ABOUT: ''
-  FACEBOOK: ''
-  TWITTER: ''
-  TYPE: 'Comms, media & PR'
-  OTHER SOCIALS: ''
-  Relevant contacts: ''
-  NOTES: ''
 - NAME: Human Rights Watch
   WEBSITE: 'https://www.hrw.org/'
   ABOUT: >-
@@ -5364,7 +5355,7 @@
     account and bring justice to victims.
   FACEBOOK: 'https://www.facebook.com/HumanRightsWatch'
   TWITTER: '@hrw'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5375,7 +5366,7 @@
     environmental law, climate and wildlife justice.
   FACEBOOK: 'https://www.facebook.com/advocates4earth/'
   TWITTER: '@Advocates4Earth'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5386,7 +5377,7 @@
     reform, strategic litigation. Included for intersectionality purposes. 
   FACEBOOK: 'https://www.facebook.com/justrightscot/'
   TWITTER: '@justrightscot'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5398,7 +5389,7 @@
     negotiations.
   FACEBOOK: 'https://www.facebook.com/Legal-Response-Initiative-LRI-381457008644541/'
   TWITTER: '@legalresponse'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5413,7 +5404,7 @@
     law and governance.
   FACEBOOK: 'https://www.facebook.com/SCELG/'
   TWITTER: '@scelg'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5424,7 +5415,7 @@
     complex issues of climate change.
   FACEBOOK: 'https://www.facebook.com/CLGInitiative'
   TWITTER: '@CLGInitiative'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5436,7 +5427,7 @@
     America.
   FACEBOOK: 'https://www.facebook.com/lawgaction/'
   TWITTER: '@LAWGaction'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5448,7 +5439,7 @@
     leaders
   FACEBOOK: 'https://www.facebook.com/ColumbiaClimateLaw/'
   TWITTER: '@ColumbiaClimate'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5460,7 +5451,7 @@
     environment.
   FACEBOOK: 'https://www.facebook.com/ClientEarth'
   TWITTER: '@ClientEarth'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5475,7 +5466,7 @@
     Sciences.
   FACEBOOK: ''
   TWITTER: '@CSHRL'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5487,7 +5478,7 @@
     and Sunday Times Good University Guide 2019.
   FACEBOOK: 'https://www.facebook.com/pages/Dundee-Law-School/109319065753137'
   TWITTER: '@LawDundee'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5498,7 +5489,7 @@
     natural resources and energy law and policy - www.cepmlp.org
   FACEBOOK: 'https://www.facebook.com/UoDCEPMLP/'
   TWITTER: '@CEPMLP'
-  TYPE: 'Comms, media & PR'
+  TYPE: Legal
   OTHER SOCIALS: ''
   Relevant contacts: ''
   NOTES: ''
@@ -5543,7 +5534,9 @@
 - NAME: Ontological Security of Pacific Island Countries and Islanders
   WEBSITE: 'https://sites.google.com/view/ospics/home'
   ABOUT: Ontological Security of the Pacific Island Countries & Islanders
-  FACEBOOK: "Ontological Security of the Pacific Island Countries & Islanders #OSPICs \uD83C\uDF0A @sarinatheys : Political Scientist|Cultural Anthropologist \uD83C\uDF3AObserver #COP25"
+  FACEBOOK: >-
+    Ontological Security of the Pacific Island Countries & Islanders #OSPICs
+    @sarinatheys : Political Scientist|Cultural Anthropologist Observer #COP25
   TWITTER: '@OSPIS4'
   TYPE: NGO/other organsiations
   OTHER SOCIALS: ''
