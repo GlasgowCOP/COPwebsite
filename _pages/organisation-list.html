@@ -11,31 +11,161 @@ permalink: "/organisation-list.html"
 
 <!-- Document -->
 <div id="menu">
- <div class="panel list-group">
-    <!-- Loop over each organisation type file -->
-    <a href="#" class="list-group-item" data-toggle="collapse" data-target="#sm" data-parent="#menu">Organisations <span class="label label-info"></span><span class="glyphicon glyphicon-envelope pull-right"></span></a>
-    {% for org in site.data.ORGANISATIONS%}
-    {% assign web = org["WESBITE"] %}
-    {% assign name = org["ORGANISATION NAME"] %}
-    {% assign about = org["AIMS/ABOUT"] %}
-    <a href='{{ web }}' class="list-group-item
-    small"><span class="glyphicon
-			glyphicon-chevron-right"></span>{{ name }}</a>
+  <select class="form-control" id='typelist' name='typelist'
+	  onClick="loadPage()">
+  </select>
+
+  <br>
+  <div id="menu">
+    <div id="listOrg"> 
     
-    <div class="list-group-item small">
-      <span class="fas fa-pen fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="description"></span> 
-      <span class="text-muted"> {{ about }} </span>
-   </div>
-      <!--
-      <br>
-      <span class="fab fa-facebook-f fa-fw text-muted" data-toggle="tooltip" title="" data-original-title={{ org["FACEBOOK"]}}></span>
-      <span class="text-muted small">{{ org.["ORGANISATION NAME"]}}</span>
-      <br>
-      <span class="fab fa-twitter fa-fw text-muted" data-toggle="tooltip" data-original-title="" title={{ org["Twitter"]}}></span> 
-      <span class="text-muted small text-truncate">{{ org["Twitter"] }}</span> 
-    </div>  
-      -->
-      {% endfor %}
+    </div>
+    
   </div>
 </div>
 
+
+<script>
+
+  $(document).ready( function getDropdown() {
+
+      var types = new Array();
+      {% for org in site.data.ORGANISATIONS %}
+      //console.log("{{ org.TYPE }}");
+      types.push("{{org.TYPE}}");
+
+      {% endfor %}
+
+
+       const distinct = (value, index, self) => {                                                                                                                               
+	   return self.indexOf(value) === index;                                                                                                                                
+       }                                                                                                                                                                                                                                                                                                                                                        
+      const uniqueTypes = types.filter(distinct);                                                                                                                              
+
+      console.log(uniqueTypes);
+
+
+
+      function makeUL(array) {
+
+	  var drop = document.getElementById('typelist');
+
+	  for (var i = 0; i < array.length; i++) {
+
+	      drop.options[i] = new Option(array[i], array[i])
+
+	  }
+      };
+
+      makeUL(uniqueTypes);
+      
+  });
+
+
+  function loadPage(){
+
+      var e = document.getElementById("listOrg");
+      
+      var child = e.lastElementChild;  
+      while (child) { 
+          e.removeChild(child); 
+          child = e.lastElementChild;
+      }
+      
+      console.log(document.getElementById('typelist').value);
+
+      var currentList = new String(document.getElementById('typelist').value);
+
+      var listNew = document.getElementById('listOrg');
+      
+      {% for org in site.data.ORGANISATIONS %}
+
+      var orgType = "{{ org.TYPE }}";
+      var orgName = "{{org.NAME | strip_newlines}}";
+
+      if (orgType == currentList) {
+
+	  // <a href="https://unfccc.int" class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span>UN Climate Change</a>
+
+	  var text = document.createTextNode(orgName);
+	  
+	  var button = document.createElement('button');
+	  button.class = "btn btn-primary btn-lg btn-block";
+	  button.type = "button";
+	  button.appendChild(text);
+
+	  
+	  listNew.appendChild(button);
+
+	  listNew.appendChild(document.createElement("br"));
+	  
+	  /*
+	  
+
+	  var div1 = document.createElement('div');
+	  div1.class = "card-group";
+	  div1.id = orgName;
+
+	  var div2 = document.createElement('div');
+	  div2.class = "card card-default";
+
+	  var div3 = document.createElement('div');
+	  div3.class = "card-heading";
+
+	  var head1 = document.createElement('h3');
+	  head1.class = "card-title";
+
+	  var link1 = document.createElement('a');
+	  link1["data-toggle"] = "collapse";
+	  link1["data-parent"] = "#top";
+	  link1.href = "#collapse" + orgName;
+	  link1.appendChild(text)
+	  
+	  head1.appendChild(link1);
+	  div3.appendChild(head1);
+	  div2.appendChild(div3);
+
+	  var div4 = document.createElement('div');
+	  div4.class = "card-collapse collapse";
+	  div4.id = "collapse" + orgName;
+	  
+	  var div5 = document.createElement('div');
+	  div5.class = "card-body";
+
+	  linkName = document.createElement('a');
+	  //linkName.href = "{{org.WEBSITE}}";
+	  linkName.appendChild(text);
+	  div5.appendChild(linkName)
+	  
+	  div4.appendChild(div5);
+
+	  div2.appendChild(div4);
+
+	  div1.append(div2);
+
+	  listNew.appendChild(div1);
+
+	  */
+
+	  
+      }
+      
+      {% endfor %}
+      
+  };
+
+  
+      </script>
+
+<style>
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #4CAF50;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+</style>
