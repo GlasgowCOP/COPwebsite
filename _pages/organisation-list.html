@@ -94,7 +94,7 @@ permalink: "/organisation-list.html"
 	  var tname = "test" + Math.floor(Math.random()*1000);
 	  
 	  var button = document.createElement('button');
-	  button.className="btn btn-block btn-primary"
+	  button.className="btn btn-block btn-primary mb-1"
 	  $(button).attr("data-toggle","collapse");
 	  $(button).attr("data-target","#"+tname);
 	  button.appendChild(text);
@@ -107,14 +107,28 @@ permalink: "/organisation-list.html"
 	  $(div1).attr("class","collapse");
 	  div1.id = tname;
 
-	  var link1 = document.createElement('a');
-	  link1.href = "{{org.WEBSITE}}";
-	  $(link1).text(orgName);
+	  var linkweb = document.createElement('a');
+	  linkweb.className="btn btn-outline-success btn-sm btn-round mb-1";
+	  linkweb.href = "{{org.WEBSITE}}";
+	  $(linkweb).text("Website");
 
+	  var linkface = document.createElement('a');
+	  linkface.className="btn btn-outline-success btn-sm btn-round mb-1";
+	  linkface.href = "{{org.FACEBOOK}}";
+	  $(linkface).text("Facebook");
+
+	  var linktwit = document.createElement('a');
+	  linktwit.className="btn btn-outline-success btn-sm btn-round mb-1";
+	  linktwit.href = "{{org.TWITTER}}";
+	  $(linktwit).text("Twitter");
+
+	  
 	  var desc = document.createElement('p');
 	  $(desc).text("{{org.ABOUT | strip_newlines}}");
 
-	  div1.appendChild(link1);
+	  div1.appendChild(linkweb);
+	  div1.appendChild(linkface);
+	  div1.appendChild(linktwit);
 	  div1.appendChild(desc);
 	  
 
