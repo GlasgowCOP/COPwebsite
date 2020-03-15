@@ -88,32 +88,55 @@ permalink: "/organisation-list.html"
 	  // <a href="https://unfccc.int" class="list-group-item small"><span class="glyphicon glyphicon-chevron-right"></span>UN Climate Change</a>
 
 	  var text = document.createTextNode(orgName);
+
+	  var span = document.createElement('span');
+
+	  var tname = "test" + Math.floor(Math.random()*1000);
 	  
 	  var button = document.createElement('button');
-	  button.class = "btn btn-primary btn-lg btn-block";
-	  button.type = "button";
+	  button.className="btn btn-block btn-primary"
+	  $(button).attr("data-toggle","collapse");
+	  $(button).attr("data-target","#"+tname);
 	  button.appendChild(text);
 
-	  
-	  listNew.appendChild(button);
+	  span.appendChild(button);
 
-	  listNew.appendChild(document.createElement("br"));
-	  
-	  /*
-	  
+	  listNew.appendChild(span);
 
 	  var div1 = document.createElement('div');
-	  div1.class = "card-group";
+	  $(div1).attr("class","collapse");
+	  div1.id = tname;
+
+	  var link1 = document.createElement('a');
+	  link1.href = "{{org.WEBSITE}}";
+	  $(link1).text(orgName);
+
+	  var desc = document.createElement('p');
+	  $(desc).text("{{org.ABOUT | strip_newlines}}");
+
+	  div1.appendChild(link1);
+	  div1.appendChild(desc);
+	  
+
+	  listNew.appendChild(div1);
+
+
+	  
+	  
+	  /*
+
+	  var div1 = document.createElement('div');
+	  div1.className = "card-group";
 	  div1.id = orgName;
 
 	  var div2 = document.createElement('div');
-	  div2.class = "card card-default";
+	  div2.className = "card card-default";
 
 	  var div3 = document.createElement('div');
-	  div3.class = "card-heading";
+	  div3.className = "card-heading";
 
 	  var head1 = document.createElement('h3');
-	  head1.class = "card-title";
+	  head1.className = "card-title";
 
 	  var link1 = document.createElement('a');
 	  link1["data-toggle"] = "collapse";
@@ -126,11 +149,11 @@ permalink: "/organisation-list.html"
 	  div2.appendChild(div3);
 
 	  var div4 = document.createElement('div');
-	  div4.class = "card-collapse collapse";
+	  div4.className = "card-collapse collapse";
 	  div4.id = "collapse" + orgName;
 	  
 	  var div5 = document.createElement('div');
-	  div5.class = "card-body";
+	  div5.className = "card-body";
 
 	  linkName = document.createElement('a');
 	  //linkName.href = "{{org.WEBSITE}}";
@@ -157,15 +180,4 @@ permalink: "/organisation-list.html"
   
       </script>
 
-<style>
-.block {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: #4CAF50;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-</style>
+
