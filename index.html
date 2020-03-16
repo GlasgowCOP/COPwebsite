@@ -1,161 +1,63 @@
 ---
-title: "Mundana Free Jekyll Theme"
+title: "COP Collective"
 layout: default
 pagination:
     enabled: true
-description: "A great Jekyll theme developed by Sal @wowthemesnet."
 ---
+
+
+<style>
+#clockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    margin: 0 auto;
+    font-weight: 100;
+    text-align: center;
+    font-size: 20px;
+}
+
+#clockdiv > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #00BF96;
+    display: inline-block;
+}
+
+#clockdiv div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #00816A;
+    display: inline-block;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
+</style>
+
+
 
 
 <div class="container">
 
 {% if page.url == "/" %}
-
-
-
-<!-- Begin post excerpts, let's highlight the first 4 posts on top -->
-<div class="row remove-site-content-margin">
-
-    <!-- latest post -->
-    {% assign latest_post = site.posts[0] %}
-    <div class="col-md-6">
-    <div class="card border-0 mb-4 box-shadow">
-    <a href="{{site.baseurl}}{{latest_post.url}}">
-    <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{site.baseurl}}/{{ latest_post.image}}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
-    </a>
-    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
-    <h2 class="h4 font-weight-bold">
-    <a class="text-dark" href="{{site.baseurl}}{{latest_post.url}}">{{ latest_post.title }}</a>
-    </h2>
-    <p class="excerpt">
-        {{ latest_post.excerpt | strip_html | strip_newlines | truncate: 136 }}
-    </p>
-    <div>
-        <small class="d-block text-muted">
-            In <span class="catlist">
-                {% for category in latest_post.categories %}
-                <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                {% endfor %}
-                </span>
-        </small>
-        <small class="text-muted">
-            {{ latest_post.date | date: '%b %d, %Y' }}
-        </small>
-    </div>
-    </div>
-    </div>
-    </div>
-
-    <div class="col-md-6">
-
-        <!-- second latest post -->
-        {%- assign second_post = site.posts[1] -%}
-        <div class="mb-3 d-flex align-items-center">
-                {% if second_post.image %}
-                <div class="col-md-4">
-                <a href="{{site.baseurl}}{{second_post.url}}">
-                 <img class="w-100" src="{% if second_post.image contains "://" %}{{ second_post.image }}{% else %}{{ second_post.image | absolute_url }}{% endif %}" alt="{{ second_post.title }}">
-                </a>
-                </div>
-                {% endif %}
-                <div>
-                    <h2 class="mb-2 h6 font-weight-bold">
-                    <a class="text-dark" href="{{site.baseurl}}{{second_post.url}}">{{ second_post.title }}</a>
-                    </h2>
-                    <small class="d-block text-muted">
-                        In <span class="catlist">
-                        {% for category in second_post.categories %}
-                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                        {% endfor %}
-                        </span>
-                    </small>
-                    <small class="text-muted">
-                        {{ second_post.date | date: '%b %d, %Y' }}
-                    </small>
-                </div>
-            </div>
-
-        <!-- third latest post -->
-        {%- assign third_post = site.posts[2] -%}
-        <div class="mb-3 d-flex align-items-center">
-                {% if third_post.image %}
-                <div class="col-md-4">
-                <a href="{{site.baseurl}}{{third_post.url}}">
-                 <img class="w-100" src="{% if third_post.image contains "://" %}{{ third_post.image }}{% else %}{{site.baseurl}}/{{ third_post.image }}{% endif %}" alt="{{ third_post.title }}">
-                </a>
-                </div>
-                {% endif %}
-                <div>
-                    <h2 class="mb-2 h6 font-weight-bold">
-                    <a class="text-dark" href="{{site.baseurl}}{{third_post.url}}">{{ third_post.title }}</a>
-                    </h2>
-                    <small class="d-block text-muted">
-                        In <span class="catlist">
-                        {% for category in third_post.categories %}
-                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                        {% endfor %}
-                        </span>
-                    </small>
-                    <small class="text-muted">
-                        {{ third_post.date | date: '%b %d, %Y' }}
-                    </small>
-                </div>
-            </div>
-
-        <!-- fourth latest post -->
-        {%- assign fourth_post = site.posts[3] -%}
-        <div class="mb-3 d-flex align-items-center">
-                {% if fourth_post.image %}
-                <div class="col-md-4">
-                <a href="{{site.baseurl}}{{fourth_post.url}}">
-                <img class="w-100" src="{% if fourth_post.image contains "://" %}{{ fourth_post.image }}{% else %}{{site.baseurl}}/{{ fourth_post.image }}{% endif %}" alt="{{ fourth_post.title }}">
-                </a>
-                </div>
-                {% endif %}
-                <div>
-                    <h2 class="mb-2 h6 font-weight-bold">
-                    <a class="text-dark" href="{{site.baseurl}}{{fourth_post.url}}">{{ fourth_post.title }}</a>
-                    </h2>
-                    <small class="d-block text-muted">
-                        In <span class="catlist">
-                        {% for category in fourth_post.categories %}
-                        <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                        {% endfor %}
-                        </span>
-                    </small>
-                    <small class="text-muted">
-                        {{ fourth_post.date | date: '%b %d, %Y' }}
-                    </small>
-                </div>
-            </div>
-
-    </div>
-
-</div>
-
-<!-- Sticky - add sticky tag to the post you want to highlight here - tags: [sticky] -->
-{% for post in site.posts %}
-{% if post.tags contains "sticky" %}
-<div class="jumbotron jumbotron-fluid jumbotron-home pt-0 pb-0 mt-3 mb-2rem bg-lightblue position-relative">
-    <div class="pl-4 pr-0 h-100 tofront">
-        <div class="row justify-content-between">
-            <div class="col-md-6 pt-6 pb-6 pr-lg-4 align-self-center">
-                <h1 class="mb-3">{{post.title}}</h1>
-                <p class="mb-3 lead">
-                    {{ post.excerpt | strip_html | strip_newlines | truncate: 136 }}
-                </p>
-                <a href="{{site.baseurl}}{{post.url}}" class="btn btn-dark">Read More</a>
-            </div>
-            <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{site.baseurl}}/{{ post.image }});">
-            </div>
-        </div>
+<div class="row mt-2">
+    <div id="clockdiv">
+	 <div>
+	   <span class="days" id="days"></span>
+	   <div class="smalltext"> Days  </div>
+	 </div>
+	 <div>
+	   <span class="hours" id="hours"></span>
+	   <div class="smalltext"> Hours </div>
+	 </div>
+	 <div>
+	   <span class="minutes" id="minutes"></span>
+	   <div class="smalltext">Minutes</div>
+	 </div>
     </div>
 </div>
-{% endif %}
-{% endfor %}
-
-
-
 
 
 {% endif %} <!--endif page url is / -->
@@ -229,104 +131,34 @@ description: "A great Jekyll theme developed by Sal @wowthemesnet."
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/js-yaml.min.js"></script>
 <script type="text/javascript" src="https://hack-education-data.github.io/master/js/github.js"></script>
 
-<h1>Update </h1>
-<script type="text/javascript">
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Nov 9, 2020 00:00:00").getTime();
 
-    // Reset the cookie manually
-    //Cookies.expire('token');
+// Update the count down every 1 second
+var x = setInterval(function() {
 
-    // URL: https://[user/org].github.io/[repo]/pull-spreadsheet/?key=your_key&worksheet=worksheet_name&token=your_personal_access_token&org=your_org&repo=your_repo&branch=your_branch
+  // Get today's date and time
+  var now = new Date().getTime();
 
-    // Incoming Variables append
-    var $key = getUrlVar('key');
-    var $resource = getUrlVar('worksheet');
-    var $oAuthToken = getUrlVar('token');
-    var $org = getUrlVar('org');
-    var $repo = getUrlVar('repo');
-    var $branch = getUrlVar('branch');
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
 
-    var $yaml_store = "";
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if($oAuthToken !='')
-      {
-      // Setting a cookie value
-      Cookies.set('token', $oAuthToken);
-      // Set with expiration
-      // Cookies.set('token', $oAuthToken, { expires: '01/01/2017' });
-      }
+  // Display the result in the element with id="demo"
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
 
-    // Grab the token from cookie
-    $oAuthToken = Cookies.get('token');
-
-    $(document).ready( function() {
-      Tabletop.init( { key: $key,
-                       callback: showInfo,
-                       wanted: [ $resource ],
-                       debug: true } )
-    })
-
-    console.log($resource);
-
-    function showInfo(data, tabletop) {
-
-      $products = new Array();
-
-      $("#table_info").text("We found the tables " + tabletop.model_names.join(", "));
-
-      $.each( tabletop.sheets(), function(i, sheet) {
-        $("#table_info").append("<p>" + sheet.name + " has " + sheet.column_names.join(", ") + "</p>");
-      });
-
-      $product = tabletop.sheets($resource).all();
-
-      $count = 0;
-      $total_count = $product.length;
-      $.each( tabletop.sheets($resource).all(), function(i, service) {
-
-          $p = {};
-          $.each(service, function($key, $value) {
-            //console.log($key + ' == ' + $value);
-            $p[$key] = $value;
-          });
-          $products.push($p);
-
-          $count++;
-          //console.log($count + ' == ' + $total_count);
-          if($count==$total_count)
-            {
-            $yaml_dump = jsyaml.dump($products);
-
-            document.getElementById('source').value = $yaml_dump;
-
-            // Grab the token from cookie
-            $oAuthToken = Cookies.get('token');
-
-            var github = new Github({token: $oAuthToken,auth: "oauth"});
-            var repo = github.getRepo($org,$repo);
-
-            repo.getTree($branch + '?recursive=true', function(err, tree) {
-
-              $.each(tree, function(treeKey, treeValue) {
-
-                $writepath = '_data/' + $resource + '.yaml';
-                $path = treeValue['path'];
-                $sha = treeValue['sha'];
-
-                //console.log($path + ' == ' + $writepath);
-
-                if($path==$writepath)
-                  {
-                  repo.writemanual('master',$writepath, $yaml_dump, 'Save', $sha, function(err) { });
-                  console.log("writing " + $writepath);
-                  //alert("saved " + $writepath);
-                  }
-                });
-              });
-
-            }
-      });
-
-    }
-
+    // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
 </script>
-<textarea cols="10" rows="5" id="source" style="border: 1px solid #000; width: 100%; height: 350px;"></textarea>
