@@ -113,7 +113,7 @@ permalink: "/organisation-list.html"
 
 	  var linktwit = document.createElement('a');
 	  linktwit.className="btn btn-outline-success btn-sm btn-round mb-1";
-	  linktwit.href = "{{org.TWITTER}}";
+	  linktwit.href = "twitter.com/" + "{{org.TWITTER}}";
 	  $(linktwit).text("Twitter");
 
 	  
@@ -129,56 +129,6 @@ permalink: "/organisation-list.html"
 	  listNew.appendChild(div1);
 
 
-	  
-	  
-	  /*
-
-	  var div1 = document.createElement('div');
-	  div1.className = "card-group";
-	  div1.id = orgName;
-
-	  var div2 = document.createElement('div');
-	  div2.className = "card card-default";
-
-	  var div3 = document.createElement('div');
-	  div3.className = "card-heading";
-
-	  var head1 = document.createElement('h3');
-	  head1.className = "card-title";
-
-	  var link1 = document.createElement('a');
-	  link1["data-toggle"] = "collapse";
-	  link1["data-parent"] = "#top";
-	  link1.href = "#collapse" + orgName;
-	  link1.appendChild(text)
-	  
-	  head1.appendChild(link1);
-	  div3.appendChild(head1);
-	  div2.appendChild(div3);
-
-	  var div4 = document.createElement('div');
-	  div4.className = "card-collapse collapse";
-	  div4.id = "collapse" + orgName;
-	  
-	  var div5 = document.createElement('div');
-	  div5.className = "card-body";
-
-	  linkName = document.createElement('a');
-	  //linkName.href = "{{org.WEBSITE}}";
-	  linkName.appendChild(text);
-	  div5.appendChild(linkName)
-	  
-	  div4.appendChild(div5);
-
-	  div2.appendChild(div4);
-
-	  div1.append(div2);
-
-	  listNew.appendChild(div1);
-
-	  */
-
-	  
       }
       
       {% endfor %}
